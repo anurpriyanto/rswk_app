@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:rswk_app/services/exampleService.dart';
 
-class FormPage extends StatefulWidget {
-  FormPage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<FormPage> createState() => _FormPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _FormPageState extends State<FormPage> {
+class _LoginPageState extends State<LoginPage> {
   // GkiApi gkiAPi = GkiApi();
   final ExampleService _exampleService = ExampleService();
   TextEditingController namaController = TextEditingController();
@@ -35,7 +35,7 @@ class _FormPageState extends State<FormPage> {
               padding: const EdgeInsets.fromLTRB(20, 15, 20, 10),
               child: TextFormField(
                 controller: namaController,
-                decoration: const InputDecoration(hintText: "Nama"),
+                decoration: const InputDecoration(hintText: "No MR"),
               ),
             ),
             Container(
@@ -83,7 +83,8 @@ class _FormPageState extends State<FormPage> {
                         .submitAPI2(namaController.text, tglController.text)
                         .then((value) => {
                               setState(() {
-                                _namaResponse = value.nama;
+                                _namaResponse = value.noMr;
+                                _tglResponse = value.tanggalLahir;
                                 _isLoading = false;
                               })
                             });
@@ -116,7 +117,7 @@ class _FormPageState extends State<FormPage> {
                           Row(
                             children: [
                               const Text(
-                                "Nama",
+                                "No MR",
                                 style: TextStyle(fontWeight: FontWeight.w700),
                               ),
                               Padding(
