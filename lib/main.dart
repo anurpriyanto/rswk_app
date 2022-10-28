@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rswk_app/example/RuanganPage.dart';
+import 'package:rswk_app/example/fatur1/dokter_page.dart';
+import 'package:rswk_app/example/fatur1/riwayat_page.dart';
 import 'package:rswk_app/example/formPage.dart';
 import 'package:rswk_app/example/login_page.dart';
 import 'package:rswk_app/example/testPage1.dart';
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: LoginPage()
+        home: DokterPage() //RuanganPage() //LoginPage()
         // testPage1() //FormPage() //const MyHomePage(title: 'Flutter Demo Home Page'),
         );
   }

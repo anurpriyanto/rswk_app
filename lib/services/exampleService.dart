@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:rswk_app/example/history.dart';
 import 'package:rswk_app/models/apiResponse.dart';
 import 'package:rswk_app/models/cek.dart';
 
@@ -37,6 +38,13 @@ class ExampleService {
           httpStatus: "500", nama: "", tglLahir: "", id: "", createdAt: "");
     }
     print("apiResponse ::: ${jsonEncode(apiResponse)}");
+
+    History h = History(
+        noMr: "noMr",
+        tglLahir: "tglLahir",
+        history: List.empty(),
+        status: false,
+        message: "message");
     return apiResponse;
   }
 
